@@ -39,6 +39,8 @@ def probability_strike(b, s, p):
 
 
 def probability_reaching(b, s, p):
+    if b < 0 or s < 0:
+        return 0
     if (b, s) == (0, 0):
         return 1
     from_ball = probability_reaching(b - 1, s, p) * probability_ball(b - 1, s, p)
